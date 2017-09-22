@@ -27,6 +27,17 @@ def pushSavings(actualValues, saveTo):
     else:
       return pushSavings(actualValues, saveTo.tail)
 
+def saveCurrentValues(currentPlayer, saveTo):
+  if saveTo.isEmpty:
+    return saveCurrentValues(currentPlayer, saveTo.tail)
+  if currentPlayer.value[0] == saveTo.value[0]:
+    tempSave = saveTo
+    tempSave.value[1] = currentPlayer.value[1]
+    return tempSave
+  else:
+    return saveCurrentValues(currentPlayer, saveTo.tail)
+    
+
 
 def RoundOff(list,firstItem=None):
   tempFirst = firstItem

@@ -46,6 +46,7 @@ class Game:
     self.pot += currentPlayer.value[2]
     currentPlayer.value[2] = 0
     self.folded += 1
+    self.data = saveCurrentValues(currentPlayer, self.data)
     return removePlayer(currentPlayer)
 
   def bet(self,currentPlayer,chips):
